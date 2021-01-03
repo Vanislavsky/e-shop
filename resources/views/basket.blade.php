@@ -70,7 +70,7 @@
                 <td>{{ $product->getPrice($product->pivot->count)}} руб</td>
             </tr>
             @endforeach
-            
+
             <tr>
                 <td colspan="3">Общая стоимость:</td>
                 <td>{{$order->calculate()}} руб.</td>
@@ -79,7 +79,19 @@
         </table>
         <br>
         <div class="btn-group pull-right" role="group">
-            <a type="button" class="btn btn-success" href="http://127.0.0.1:8000/basket/place">Оформить заказ</a>
+            @guest
+                <form action="{{route('order')}}" method="POST">
+                    <button type="submit" class="btn btn-primary" role="button">Оформить заказ</button>
+                    @csrf
+                </form>
+            @endguest
+
+            @auth
+                    <form action="{{route('basket_confirm_by_id')}}" method="POST">
+                        <button type="submit" class="btn btn-primary" role="button">Подтвердить заказ</button>
+                        @csrf
+                    </form>
+            @endauth
         </div>
     </div>
 </div>

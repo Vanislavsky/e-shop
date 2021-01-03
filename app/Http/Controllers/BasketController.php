@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Order;
+use Illuminate\Support\Facades\Auth;
 
 class BasketController extends Controller
 {
@@ -25,6 +27,17 @@ class BasketController extends Controller
 
         $categories = Category::get();
         return view('order', compact('order'))->with('categories', $categories);
+    }
+
+    public function basketConfirmById() {
+        $orderId = session('orderId');
+        $order = Order::find($orderId);
+        $user = Auth::user();
+        $order->name = $user->name;
+        $order->status = 1;
+        $order->save();
+        session()->forget('orderId');
+        return redirect()->route('main');
     }
 
     public function basketConfirm(Request $request) {
@@ -52,6 +65,11 @@ class BasketController extends Controller
             $pivotRow->update();
         } else {
             $order->products()->attach($productId);
+        }
+
+        if(Auth::check()) {
+            $order->user_id = Auth::id();
+            $order->save();
         }
 
         $categories = Category::get();

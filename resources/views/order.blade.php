@@ -61,7 +61,7 @@
                         <input type="hidden" name="_token" value="qhk4riitc1MAjlRcro8dvWchDTGkFDQ9Iacyyrkj">
                         <br>
                         @csrf
-                        <input type="submit" class="btn btn-success" href="" value="Подтвердить заказ">
+                        <button type="submit" class="btn btn-primary" role="button">Подтвердить заказ</button>
                     </div>
                 </form>
             </div>

@@ -26,15 +26,6 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{{route('basket')}}">Корзина</a></li>
-
-                @guest
-                <li><a href="{{route('login')}}">Войти</a></li>
-                <li><a href="{{route('register')}}">Регистрация</a></li>
-                @endguest
-
-                @auth
-                <li><a href="{{route('get_logout')}}">Выйти</a></li>
-                @endauth
             </ul>
         </div>
     </div>
@@ -43,24 +34,32 @@
 
 <div class="container">
     <div class="starter-template">
-        <h1>Все товары</h1>
+    <div class="form-group row">
+            <label for="email" class="col-sm-4 col-form-label text-md-right">E-Mail</label>
 
-        @foreach($products as $product)
-            <div class="panel">
-                <img src= "{{ asset( $product->image )}}" alt="iPhone X 64GB">
-                <div class="caption">
-                    <h3>{{ $product->name}}</h3>
-                    <p>{{ $product->price}}</p>
-                    <p>
-                        <form action="{{route('basket_add', $product->id)}}" method="POST">
-                            <button type="submit" class="btn btn-primary" role="button">В корзину</a>
-                            <a href="#" class="btn btn-default" role="button">Подробнее</a>
-                            @csrf
-                        </form>
-                    </p>
-                </div>
+            <div class="col-md-6">
+                <input id="email" type="email" class="form-control"
+                       name="email" value="" required autofocus>
+
             </div>
-        @endforeach
+        </div>
+
+        <div class="form-group row">
+            <label for="password" class="col-md-4 col-form-label text-md-right">Пароль</label>
+
+            <div class="col-md-6">
+                <input id="password" type="password" class="form-control"
+                       name="password" required>
+
+            </div>
+        </div>
+        <div class="form-group row mb-0">
+            <div class="col-md-8 offset-md-4">
+                <button type="submit" class="btn btn-primary">
+                    Войти
+                </button>
+            </div>
+        </div>
     </div>
 </div>
 </body>

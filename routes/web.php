@@ -18,6 +18,14 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/', function () {
   //  return view('index');
 //});
+Auth::routes([
+  'reset' => false,
+  'confirm' => false,
+  'verify' => false,
+]);
+
+
+Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('get_logout');
 
 Route::get('/', 'App\Http\Controllers\MainController@main')->name('main');
 Route::get('/categories', 'App\Http\Controllers\MainController@categories');
@@ -27,6 +35,7 @@ Route::get('/basket/place', 'App\Http\Controllers\BasketController@basketPlace')
 Route::post('/basket/add/{id}', 'App\Http\Controllers\BasketController@basketAdd')->name('basket_add');
 Route::post('/basket/remove/{id}', 'App\Http\Controllers\BasketController@basketRemove')->name('basket_remove');
 Route::post('/basket/place', 'App\Http\Controllers\BasketController@basketConfirm') ->name('basket_confirm');
+Route::post('/basket/by_id', 'App\Http\Controllers\BasketController@basketConfirmById') ->name('basket_confirm_by_id');
 
 Route::get('/categories/{category}', 'App\Http\Controllers\MainController@category') ->name('categ');
 Route::get('/products', 'App\Http\Controllers\MainController@products');
@@ -36,3 +45,7 @@ Route::get('/products', 'App\Http\Controllers\MainController@products');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -9,8 +9,10 @@ class Order extends Model
 {
      use HasFactory;
 
+    const productPath = 'App\Models\Product';
+
     public function products() {
-        return $this->belongsToMany(Product::class)->withPivot('count')->withTimestamps();
+        return $this->belongsToMany(self::productPath)->withPivot('count')->withTimestamps();
     }
 
     public function calculate() {

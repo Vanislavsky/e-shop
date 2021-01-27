@@ -19,7 +19,7 @@ class BasketController extends Controller
         }
 
         $categories = Category::get();
-        return view('basket', compact('order'))->with('categories', $categories);
+        return view('basket', compact('order', 'categories'));
     }
 
     public function basketPlace() {

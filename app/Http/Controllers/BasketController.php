@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\OrderRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Category;
@@ -24,7 +25,6 @@ class BasketController extends Controller
     public function basketPlace() {
         $orderId = session('orderId');
         $order = Order::find($orderId);
-
         $categories = Category::get();
         return view('order', compact('order'))->with('categories', $categories);
     }
@@ -40,7 +40,8 @@ class BasketController extends Controller
         return redirect()->route('main');
     }
 
-    public function basketConfirm(Request $request) {
+    public function basketConfirm(OrderRequest $request) {
+
         $orderId = session('orderId');
         $order = Order::find($orderId);
         $order->name = $request->name;

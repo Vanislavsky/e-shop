@@ -4,7 +4,9 @@
     <list default="true" id="d4e26176-e6d8-44bb-bbfb-671096df5da2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BasketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BasketController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/basket.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/basket.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +214,8 @@
       <workItem from="1609654504404" duration="38000" />
       <workItem from="1609654545689" duration="653000" />
       <workItem from="1611730616537" duration="3443000" />
-      <workItem from="1611758904872" duration="1125000" />
+      <workItem from="1611758904872" duration="1444000" />
+      <workItem from="1611817299224" duration="3808000" />
     </task>
     <task id="LOCAL-00001" summary="add requests validation">
       <created>1611734457459</created>
@@ -221,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611734457459</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="refactoring code">
+      <created>1611760372711</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1611760372711</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,7 +239,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add requests validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="add requests validation" />
+    <MESSAGE value="refactoring code" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -238,6 +249,11 @@
           <url>file://$PROJECT_DIR$/routes/web.php</url>
           <line>33</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/AuthBasketController.php</url>
+          <line>13</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

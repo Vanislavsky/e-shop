@@ -52,11 +52,21 @@
                     <h3>{{ $product->name}}</h3>
                     <p>{{ $product->price}}</p>
                     <p>
+                    @guest
                         <form action="{{route('basket_add', $product->id)}}" method="POST">
-                            <button type="submit" class="btn btn-primary" role="button">В корзину</a>
-                            <a href="#" class="btn btn-default" role="button">Подробнее</a>
+                            <button type="submit" class="btn btn-primary" role="button">В корзину</button>
+                                <a href="#" class="btn btn-default" role="button">Подробнее</a>
                             @csrf
                         </form>
+                    @endguest
+
+                    @auth
+                        <form action="{{route('authBasket_add', $product->id)}}" method="POST">
+                            <button type="submit" class="btn btn-primary" role="button">В корзину___</button>
+                                <a href="#" class="btn btn-default" role="button">Подробнее</a>
+                            @csrf
+                        </form>
+                        @endauth
                     </p>
                 </div>
             </div>

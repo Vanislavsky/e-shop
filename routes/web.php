@@ -35,12 +35,15 @@ Route::get('/basket/place', 'App\Http\Controllers\BasketController@basketPlace')
 Route::post('/basket/add/{id}', 'App\Http\Controllers\BasketController@basketAdd')->name('basket_add');
 Route::post('/basket/remove/{id}', 'App\Http\Controllers\BasketController@basketRemove')->name('basket_remove');
 Route::post('/basket/place', 'App\Http\Controllers\BasketController@basketConfirm') ->name('basket_confirm');
-Route::post('/basket/by_id', 'App\Http\Controllers\BasketController@basketConfirmById') ->name('basket_confirm_by_id');
 
 Route::get('/categories/{category}', 'App\Http\Controllers\MainController@category') ->name('categ');
 Route::get('/products', 'App\Http\Controllers\MainController@products');
 
 
+Route::get('/authBasket', 'App\Http\Controllers\AuthBasketController@basket')->name('authBasket');
+Route::post('/authBasket/add/{id}', 'App\Http\Controllers\AuthBasketController@basketAdd')->name('authBasket_add');
+Route::post('/authBasket/remove/{id}', 'App\Http\Controllers\AuthBasketController@basketRemove')->name('authBasket_remove');
+Route::post('/authBasket/by_id', 'App\Http\Controllers\AuthBasketController@basketConfirmById') ->name('basket_confirm_by_id');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

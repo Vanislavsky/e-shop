@@ -29,19 +29,7 @@ class BasketController extends Controller
         return view('order', compact('order'))->with('categories', $categories);
     }
 
-    public function basketConfirmById() {
-        $orderId = session('orderId');
-        $order = Order::find($orderId);
-        $user = Auth::user();
-        $order->name = $user->name;
-        $order->status = 1;
-        $order->save();
-        session()->forget('orderId');
-        return redirect()->route('main');
-    }
-
     public function basketConfirm(OrderRequest $request) {
-
         $orderId = session('orderId');
         $order = Order::find($orderId);
         $order->name = $request->name;

@@ -53,17 +53,33 @@
                 </td>
                 <td><span class="badge">{{ $product->pivot->count}}</span>
                     <div class="btn-group">
-                        <form action="{{route('basket_remove', $product)}}" method="POST">
-                            <button type="submit" class="btn btn-danger" href=""><span
-                                class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
-                            @csrf
-                        </form>
+                        @guest
+                            <form action="{{route('basket_remove', $product)}}" method="POST">
+                                <button type="submit" class="btn btn-danger" href=""><span
+                                        class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+                                @csrf
+                            </form>
 
-                        <form action="{{route('basket_add', $product)}}" method="POST">
-                            <button type="submit" class="btn btn-success" href=""><span
-                                class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
-                            @csrf
-                        </form>
+                            <form action="{{route('basket_add', $product)}}" method="POST">
+                                <button type="submit" class="btn btn-success" href=""><span
+                                        class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                                @csrf
+                            </form>
+                        @endguest
+
+                        @auth
+                                <form action="{{route('authBasket_remove', $product)}}" method="POST">
+                                    <button type="submit" class="btn btn-danger" href=""><span
+                                            class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+                                    @csrf
+                                </form>
+
+                                <form action="{{route('authBasket_add', $product)}}" method="POST">
+                                    <button type="submit" class="btn btn-success" href=""><span
+                                            class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                                    @csrf
+                                </form>
+                        @endauth
                     </div>
                 </td>
                 <td>{{ $product->price}} руб</td>

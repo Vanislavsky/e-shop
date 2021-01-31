@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4e26176-e6d8-44bb-bbfb-671096df5da2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BasketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BasketController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/basket.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/basket.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="d4e26176-e6d8-44bb-bbfb-671096df5da2" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -215,7 +209,7 @@
       <workItem from="1609654545689" duration="653000" />
       <workItem from="1611730616537" duration="3443000" />
       <workItem from="1611758904872" duration="1444000" />
-      <workItem from="1611817299224" duration="3808000" />
+      <workItem from="1611817299224" duration="3972000" />
     </task>
     <task id="LOCAL-00001" summary="add requests validation">
       <created>1611734457459</created>
@@ -231,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611760372711</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add AuthBasket">
+      <created>1611824473187</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1611824473187</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +241,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add requests validation" />
     <MESSAGE value="refactoring code" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring code" />
+    <MESSAGE value="add AuthBasket" />
+    <option name="LAST_COMMIT_MESSAGE" value="add AuthBasket" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
